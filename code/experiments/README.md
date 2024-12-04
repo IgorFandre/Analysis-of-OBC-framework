@@ -32,45 +32,88 @@ conda activate experiment
 - **4 бита:**
 
   ```bash
-  CUDA_VISIBLE_DEVICES=6 python main_trueobs.py rn18 imagenet quant --wbits 4 --wasym > rn_quant/rn18quant4.txt
+  CUDA_VISIBLE_DEVICES=6 python main_trueobs.py rn18 imagenet quant --wbits 4 --wasym --save rn18_4quant.pth > rn_quant/resnet18_4_quant.txt
   ```
   _Значение accuracy: 69.16_
+
+  Теперь сделаем batchnorm tuning полученной модели:
+
+  ```bash
+  CUDA_VISIBLE_DEVICES=4 python postproc.py rn18 imagenet rn18_4quant.pth --bnt > rn_quant/resnet18_4_quant_tuning.txt
+  ```
+  _Значение accuracy: 69.44_
 
 - **3 бита:**
 
   ```bash
-  CUDA_VISIBLE_DEVICES=5 python main_trueobs.py rn18 imagenet quant --wbits 3 --wasym > rn_quant/rn18quant3.txt
+  CUDA_VISIBLE_DEVICES=5 python main_trueobs.py rn18 imagenet quant --wbits 3 --wasym --save rn18_3quant.pth > rn_quant/resnet18_3_quant.txt
   ```
   _Значение accuracy: 67.81_
+
+  Теперь сделаем batchnorm tuning полученной модели:
+
+  ```bash
+  CUDA_VISIBLE_DEVICES=4 python postproc.py rn18 imagenet rn18_3quant.pth --bnt > rn_quant/resnet18_3_quant_tuning.txt
+  ```
+  _Значение accuracy: 68.21_
 
 - **2 бита:**
 
   ```bash
-  CUDA_VISIBLE_DEVICES=5 python main_trueobs.py rn18 imagenet quant --wbits 2 --wasym > rn_quant/rn18quant2.txt
+  CUDA_VISIBLE_DEVICES=5 python main_trueobs.py rn18 imagenet quant --wbits 2 --wasym --save rn18_2quant.pth > rn_quant/resnet18_2_quant.txt
   ```
   _Значение accuracy: 56.82_
+
+  Теперь сделаем batchnorm tuning полученной модели:
+
+  ```bash
+  CUDA_VISIBLE_DEVICES=4 python postproc.py rn18 imagenet rn18_2quant.pth --bnt > rn_quant/resnet18_2_quant_tuning.txt
+  ```
+  _Значение accuracy: 63.65_
 
 ### ResNet50
 - **4 бита:**
 
   ```bash
-  CUDA_VISIBLE_DEVICES=6 python main_trueobs.py rn50 imagenet quant --wbits 4 --wasym > rn_quant/rn50quant4.txt
+  CUDA_VISIBLE_DEVICES=6 python main_trueobs.py rn50 imagenet quant --wbits 4 --wasym --save rn50_4quant.pth > rn_quant/resnet50_4_quant.txt
   ```
   _Значение accuracy: 75.58_
+
+  Теперь сделаем batchnorm tuning полученной модели:
+
+  ```bash
+  CUDA_VISIBLE_DEVICES=4 python postproc.py rn50 imagenet rn50_4quant.pth --bnt > rn_quant/resnet50_4_quant_tuning.txt
+  ```
+  _Значение accuracy: 75.10_
+
 
 - **3 бита:**
 
   ```bash
-  CUDA_VISIBLE_DEVICES=5 python main_trueobs.py rn50 imagenet quant --wbits 3 --wasym > rn_quant/rn50quant3.txt
+  CUDA_VISIBLE_DEVICES=5 python main_trueobs.py rn50 imagenet quant --wbits 3 --wasym --save rn50_3quant.pth > rn_quant/resnet50_3_quant.txt
   ```
   _Значение accuracy: 74.13_
+
+  Теперь сделаем batchnorm tuning полученной модели:
+
+  ```bash
+  CUDA_VISIBLE_DEVICES=4 python postproc.py rn50 imagenet rn50_3quant.pth --bnt > rn_quant/resnet50_3_quant_tuning.txt
+  ```
+  _Значение accuracy: 74.51_
 
 - **2 бита:**
 
   ```bash
-  CUDA_VISIBLE_DEVICES=7 python main_trueobs.py rn50 imagenet quant --wbits 2 --wasym > rn_quant/rn50quant2.txt
+  CUDA_VISIBLE_DEVICES=7 python main_trueobs.py rn50 imagenet quant --wbits 2 --wasym --save rn50_2quant.pth > rn_quant/resnet50_2_quant.txt
   ```
   _Значение accuracy: 61.59_
+
+  Теперь сделаем batchnorm tuning полученной модели:
+
+  ```bash
+  CUDA_VISIBLE_DEVICES=4 python postproc.py rn50 imagenet rn50_2quant.pth --bnt > rn_quant/resnet50_2_quant_tuning.txt
+  ```
+  _Значение accuracy: 70.25_
 
 ## 2. Неструктурированный прунинг ResNet50 с использованием SPDY
 
