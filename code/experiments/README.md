@@ -165,7 +165,7 @@ CUDA_VISIBLE_DEVICES=2,3 python spdy.py rn50 imagenet 4 unstr --dp > rn_unstr_pr
 - **n=4, m=8:**
 
   ```bash
-  <!-- CUDA_VISIBLE_DEVICES=2 python main_trueobs.py rn18 imagenet nmprune --prunen 4 --prunem 8 --save rn18_4_8prune.pth > rn_nm_prune/resnet18_4_8_prune_log.txt -->
+  CUDA_VISIBLE_DEVICES=2 python main_trueobs.py rn18 imagenet nmprune --prunen 4 --prunem 8 --save rn18_4_8prune.pth > rn_nm_prune/resnet18_4_8_prune_log.txt -->
   ```
   _Значение accuracy: 69.62_
 
