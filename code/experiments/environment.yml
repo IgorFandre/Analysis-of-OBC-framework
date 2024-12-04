@@ -1,0 +1,12 @@
+name: experiment
+channels:
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - python=3.11
+  - jsonschema=4.23.0
+  - jupyter=1.0.0
+  - matplotlib=3.9.2
+  - numpy=1.26.4
+  - tensorflow=2.17.0
+  - transformers=4.37.2
